@@ -15,6 +15,8 @@
 		8CD00BB329EDC43500AB0CDD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB229EDC43400AB0CDD /* Coordinator.swift */; };
 		8CD00BB529EDC45100AB0CDD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB429EDC45000AB0CDD /* AppCoordinator.swift */; };
 		8CD00BB729EDC47900AB0CDD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB629EDC47900AB0CDD /* MainCoordinator.swift */; };
+		8CD00BB929EDC7F100AB0CDD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB829EDC7F100AB0CDD /* MainView.swift */; };
+		8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		8CD00BB229EDC43400AB0CDD /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8CD00BB429EDC45000AB0CDD /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8CD00BB629EDC47900AB0CDD /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		8CD00BB829EDC7F100AB0CDD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				8CD00BB229EDC43400AB0CDD /* Coordinator.swift */,
 				8CD00BB429EDC45000AB0CDD /* AppCoordinator.swift */,
 				8CD00BB629EDC47900AB0CDD /* MainCoordinator.swift */,
+				8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */,
+				8CD00BB829EDC7F100AB0CDD /* MainView.swift */,
 				8CD00B9F29EDBDF400AB0CDD /* MainViewController.swift */,
 				8CD00BA429EDBDF800AB0CDD /* Assets.xcassets */,
 				8CD00BA629EDBDF800AB0CDD /* LaunchScreen.storyboard */,
@@ -165,7 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CD00BB329EDC43500AB0CDD /* Coordinator.swift in Sources */,
+				8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */,
 				8CD00BB729EDC47900AB0CDD /* MainCoordinator.swift in Sources */,
+				8CD00BB929EDC7F100AB0CDD /* MainView.swift in Sources */,
 				8CD00BA029EDBDF400AB0CDD /* MainViewController.swift in Sources */,
 				8CD00BB529EDC45100AB0CDD /* AppCoordinator.swift in Sources */,
 				8CD00B9C29EDBDF400AB0CDD /* AppDelegate.swift in Sources */,
