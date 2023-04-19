@@ -3,14 +3,13 @@
 //  meuspensamentos
 //
 //  Created by Suh on 17/04/23.
-//
+// swiftlint:disable line_length
 
 import UIKit
 
 class MainViewController: UIViewController {
 
-    let plans = ["Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades",
-        "Anotar alimentaçao e água", "Planejar o dia de amanhã"]
+    let plans = ["Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã", "Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã", "Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã", "Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã" ]
 
     var titleLabel: UILabel = {  // ====>> Isso pode ficar em um arquivo separado como "Componente" <<====
         let view = UILabel(frame: .zero)
