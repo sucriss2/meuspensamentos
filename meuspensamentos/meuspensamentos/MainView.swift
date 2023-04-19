@@ -16,6 +16,22 @@ final class MainView: UIView {
         return view
     }()
 
+    var mainLabel: UILabel = {
+        let view = UILabel(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.text = "Planejamento Diário"
+        view.font = UIFont.boldSystemFont(ofSize: 32)
+//        view.backgroundColor = .purple
+        return view
+    }()
+
+    var tableView: UITableView = {
+        let view = UITableView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemTeal
+        return view
+    }()
+
     init() {
         super.init(frame: .zero)
         setupView()
@@ -30,6 +46,8 @@ final class MainView: UIView {
 extension MainView: CodeView {
     func buidViewHierarchy() {
         addSubview(mainView)
+        mainView.addSubview(mainLabel)
+        mainView.addSubview(tableView)
     }
 
     func setupConstraints() {
@@ -37,7 +55,15 @@ extension MainView: CodeView {
             mainView.topAnchor.constraint(equalTo: self.topAnchor),
             mainView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+
+            mainLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            mainLabel.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
+            mainLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -16),
+
+            tableView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
 
         ])
     }
