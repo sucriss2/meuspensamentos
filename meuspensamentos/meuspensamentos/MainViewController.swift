@@ -9,6 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    var screen = PlanManagerView()
+
     let plans = ["Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã", "Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã", "Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã", "Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã" ]
 
     var titleLabel: UILabel = {  // ====>> Isso pode ficar em um arquivo separado como "Componente" <<====
@@ -29,12 +31,12 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // view = screen
-        view.backgroundColor = .systemMint
-        view.addSubview(titleLabel)
-        view.addSubview(tableview)
+         view = screen
+//        view.backgroundColor = .systemMint
+//        view.addSubview(titleLabel)
+//        view.addSubview(tableview)
         configConstraints()
-        configTableview()
+//        configTableview()
     }
 
     func configTableview() {
@@ -45,6 +47,12 @@ class MainViewController: UIViewController {
 
     func configConstraints() {
         NSLayoutConstraint.activate([
+
+            screen.topAnchor.constraint(equalTo: view.topAnchor),
+            screen.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            screen.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            screen.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: tableview.topAnchor, constant: -16),
