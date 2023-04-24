@@ -3,15 +3,15 @@
 //  meuspensamentos
 //
 //  Created by Suh on 17/04/23.
-// swiftlint:disable line_length
 
 import UIKit
 
 class PlanViewController: UIViewController {
 
-    let plans = [
-"Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã", "Estudar English", "Organizar mesa de trabalho", "Fazer Exercicios", "Ajudar Lívia com atividades", "Anotar alimentaçao e água", "Planejar o dia de amanhã"
-    ]
+    var model: PlanModel?
+    var plans: [Plan] {
+        return model?.plans ?? []
+    }
 
     var titleLabel: UILabel = {  // ====>> Isso pode ficar em um arquivo separado como "Componente" <<====
         let view = UILabel(frame: .zero)
@@ -65,7 +65,7 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return plans.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,9 +75,13 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
             fatalError()
         }
         let plan = plans[indexPath.row]
-//        let cell = UITableViewCell(style: .default, reuseIdentifier: "")
-//        cell.textLabel?.text = plans[indexPath.row]
+        cell.configure(model: plan)
+        cell.backgroundColor = .clear
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 
 }

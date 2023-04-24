@@ -21,6 +21,9 @@ class PlanCoordinator: Coordinator {
 
     func makeViewController() -> PlanViewController {
         let viewController = PlanViewController()
+        let model = PlanModel()
+        viewController.model = model
+        
         return viewController
     }
 
