@@ -51,14 +51,14 @@ class MainViewController: UIViewController {
             screen.topAnchor.constraint(equalTo: view.topAnchor),
             screen.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             screen.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            screen.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            screen.bottomAnchor.constraint(equalTo: view.bottomAnchor)
 
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: tableview.topAnchor, constant: -16),
-            tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+//            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+//            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            titleLabel.bottomAnchor.constraint(equalTo: tableview.topAnchor, constant: -16),
+//            tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 

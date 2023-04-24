@@ -12,7 +12,7 @@ final class PlanManagerView: UIView {
     var mainView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .cyan
+        view.backgroundColor = .clear
         return view
     }()
 
@@ -21,7 +21,6 @@ final class PlanManagerView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.distribution = .fill
-        view.backgroundColor = .white
         view.spacing = 8
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
@@ -31,9 +30,9 @@ final class PlanManagerView: UIView {
     var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .yellow
         label.text = "Cadastro"
-        label.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        label.textColor = .magenta
+        label.font = UIFont.systemFont(ofSize: 28, weight: .semibold)
         return label
     }()
 
@@ -43,8 +42,8 @@ final class PlanManagerView: UIView {
         view.backgroundColor = .systemGray5
         view.placeholder = "Titulo"
         view.text = ""
-        view.font = UIFont.systemFont(ofSize: 22, weight: .medium)
-        view.layer.cornerRadius = 8
+        view.font = UIFont.systemFont(ofSize: 22)
+        view.layer.cornerRadius = 6
         return view
     }()
 
@@ -55,15 +54,15 @@ final class PlanManagerView: UIView {
         view.placeholder = "Observação"
         view.text = ""
         view.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = 6
         return view
     }()
 
     var dateLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .blue
         label.text = "Data do Plano"
+        label.textColor = .systemPurple
         return label
     }()
 
@@ -74,7 +73,8 @@ final class PlanManagerView: UIView {
         view.preferredDatePickerStyle = .wheels
         view.minuteInterval = 5
         view.date = .now
-        view.backgroundColor = .green
+        view.tintColor = .systemPink
+        view.locale = Locale(identifier: "pt_BR")
         return view
     }()
 
@@ -119,11 +119,9 @@ extension PlanManagerView: CodeView {
             mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 
-//            stackview.topAnchor.constraint(equalTo: mainView.topAnchor),
             stackview.centerYAnchor.constraint(equalTo: mainView.centerYAnchor),
             stackview.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
             stackview.trailingAnchor.constraint(equalTo: mainView.trailingAnchor)
-//            stackview.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
         ])
 
     }
