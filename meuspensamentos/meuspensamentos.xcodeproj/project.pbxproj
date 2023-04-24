@@ -8,29 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		8C5BA30F29F17929000BB7C4 /* PlanManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BA30E29F17929000BB7C4 /* PlanManagerView.swift */; };
+		8C5F567D29F6E94E002B972E /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F567C29F6E94D002B972E /* PlanTableViewCell.swift */; };
 		8CD00B9C29EDBDF400AB0CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00B9B29EDBDF400AB0CDD /* AppDelegate.swift */; };
 		8CD00B9E29EDBDF400AB0CDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00B9D29EDBDF400AB0CDD /* SceneDelegate.swift */; };
-		8CD00BA029EDBDF400AB0CDD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00B9F29EDBDF400AB0CDD /* MainViewController.swift */; };
+		8CD00BA029EDBDF400AB0CDD /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00B9F29EDBDF400AB0CDD /* PlanViewController.swift */; };
 		8CD00BA529EDBDF800AB0CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CD00BA429EDBDF800AB0CDD /* Assets.xcassets */; };
 		8CD00BA829EDBDF800AB0CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CD00BA629EDBDF800AB0CDD /* LaunchScreen.storyboard */; };
 		8CD00BB329EDC43500AB0CDD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB229EDC43400AB0CDD /* Coordinator.swift */; };
 		8CD00BB529EDC45100AB0CDD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB429EDC45000AB0CDD /* AppCoordinator.swift */; };
-		8CD00BB729EDC47900AB0CDD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB629EDC47900AB0CDD /* MainCoordinator.swift */; };
+		8CD00BB729EDC47900AB0CDD /* PlanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */; };
 		8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8C5BA30E29F17929000BB7C4 /* PlanManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanManagerView.swift; sourceTree = "<group>"; };
+		8C5F567C29F6E94D002B972E /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
 		8CD00B9829EDBDF400AB0CDD /* meuspensamentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meuspensamentos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD00B9B29EDBDF400AB0CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CD00B9D29EDBDF400AB0CDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8CD00B9F29EDBDF400AB0CDD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8CD00B9F29EDBDF400AB0CDD /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		8CD00BA429EDBDF800AB0CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CD00BA729EDBDF800AB0CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CD00BA929EDBDF800AB0CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CD00BB229EDC43400AB0CDD /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8CD00BB429EDC45000AB0CDD /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		8CD00BB629EDC47900AB0CDD /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCoordinator.swift; sourceTree = "<group>"; };
 		8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,10 +70,11 @@
 				8CD00B9D29EDBDF400AB0CDD /* SceneDelegate.swift */,
 				8CD00BB229EDC43400AB0CDD /* Coordinator.swift */,
 				8CD00BB429EDC45000AB0CDD /* AppCoordinator.swift */,
-				8CD00BB629EDC47900AB0CDD /* MainCoordinator.swift */,
+				8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */,
 				8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */,
 				8C5BA30E29F17929000BB7C4 /* PlanManagerView.swift */,
-				8CD00B9F29EDBDF400AB0CDD /* MainViewController.swift */,
+				8C5F567C29F6E94D002B972E /* PlanTableViewCell.swift */,
+				8CD00B9F29EDBDF400AB0CDD /* PlanViewController.swift */,
 				8CD00BA429EDBDF800AB0CDD /* Assets.xcassets */,
 				8CD00BA629EDBDF800AB0CDD /* LaunchScreen.storyboard */,
 				8CD00BA929EDBDF800AB0CDD /* Info.plist */,
@@ -172,8 +175,9 @@
 			files = (
 				8CD00BB329EDC43500AB0CDD /* Coordinator.swift in Sources */,
 				8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */,
-				8CD00BB729EDC47900AB0CDD /* MainCoordinator.swift in Sources */,
-				8CD00BA029EDBDF400AB0CDD /* MainViewController.swift in Sources */,
+				8CD00BB729EDC47900AB0CDD /* PlanCoordinator.swift in Sources */,
+				8CD00BA029EDBDF400AB0CDD /* PlanViewController.swift in Sources */,
+				8C5F567D29F6E94E002B972E /* PlanTableViewCell.swift in Sources */,
 				8CD00BB529EDC45100AB0CDD /* AppCoordinator.swift in Sources */,
 				8CD00B9C29EDBDF400AB0CDD /* AppDelegate.swift in Sources */,
 				8C5BA30F29F17929000BB7C4 /* PlanManagerView.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  PlanCoordinator.swift
 //  meuspensamentos
 //
 //  Created by Suh on 17/04/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+class PlanCoordinator: Coordinator {
     var navigationController: UINavigationController!
 
     init(navigationController: UINavigationController) {
@@ -15,12 +15,12 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let mainVC = makeViewController()
-        navigationController.pushViewController(mainVC, animated: true)
+        let planVC = makeViewController()
+        navigationController.pushViewController(planVC, animated: true)
     }
 
-    func makeViewController() -> MainViewController {
-        let viewController = MainViewController()
+    func makeViewController() -> PlanViewController {
+        let viewController = PlanViewController()
         return viewController
     }
 
