@@ -23,7 +23,7 @@ class PlanCoordinator: Coordinator {
         let viewController = PlanViewController()
         let model = PlanModel()
         viewController.model = model
-        
+
         return viewController
     }
 

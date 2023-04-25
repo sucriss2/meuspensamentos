@@ -1,5 +1,5 @@
 //
-//  PlanManagerView.swift
+//  RegisterPlanView.swift
 //  meuspensamentos
 //
 //  Created by Suh on 20/04/23.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class PlanManagerView: UIView {
+final class RegisterPlanView: UIView {
 
     var mainView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         return view
     }()
 
@@ -53,6 +53,8 @@ final class PlanManagerView: UIView {
         view.backgroundColor = .systemGray5
         view.placeholder = "Observação"
         view.text = ""
+        view.accessibilityScroll(.down)
+        view.textAlignment = .justified
         view.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         view.layer.cornerRadius = 6
         return view
@@ -100,7 +102,7 @@ final class PlanManagerView: UIView {
 
 }
 
-extension PlanManagerView: CodeView {
+extension RegisterPlanView: CodeView {
     func buidViewHierarchy() {
         addSubview(mainView)
         stackview.addArrangedSubview(titleLabel)
