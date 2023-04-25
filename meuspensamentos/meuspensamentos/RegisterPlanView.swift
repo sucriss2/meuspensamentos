@@ -20,7 +20,7 @@ final class RegisterPlanView: UIView {
         let view = UIStackView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
-        view.distribution = .fill
+        view.distribution = .equalSpacing
         view.spacing = 8
         view.isLayoutMarginsRelativeArrangement = true
         view.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
@@ -32,7 +32,7 @@ final class RegisterPlanView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Cadastro"
         label.textColor = .magenta
-        label.font = UIFont.systemFont(ofSize: 28, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 36, weight: .semibold)
         return label
     }()
 
@@ -54,8 +54,8 @@ final class RegisterPlanView: UIView {
         view.placeholder = "Observação"
         view.text = ""
         view.accessibilityScroll(.down)
-        view.textAlignment = .justified
-        view.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        view.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        view.frame.size.height = 80
         view.layer.cornerRadius = 6
         return view
     }()
@@ -136,20 +136,20 @@ extension RegisterPlanView: CodeView {
 
 // ---------
 
-//    import SwiftUI
-//
-//    struct PlaygroundView: UIViewRepresentable {
-//        func makeUIView(context: Context) -> some UIView {
-//            PlanManagerView()
-//        }
-//
-//        func updateUIView(_ uiView: UIViewType, context: Context) {
-//
-//        }
-//    }
-//
-//    struct PlaygroundView_Previews: PreviewProvider {
-//        static var previews: some View {
-//            PlaygroundView()
-//        }
-//    }
+    import SwiftUI
+
+    struct PlaygroundView: UIViewRepresentable {
+        func makeUIView(context: Context) -> some UIView {
+            RegisterPlanView()
+        }
+
+        func updateUIView(_ uiView: UIViewType, context: Context) {
+
+        }
+    }
+
+    struct PlaygroundView_Previews: PreviewProvider {
+        static var previews: some View {
+            PlaygroundView()
+        }
+    }

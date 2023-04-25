@@ -6,8 +6,13 @@
 
 import UIKit
 
+protocol PlanViewControllerDelegate: AnyObject {
+    func showRegisterPlan()
+}
+
 class PlanViewController: UIViewController {
 
+    weak var delegate: PlanViewControllerDelegate?
     var model: PlanModel?
     var plans: [Plan] {
         return model?.plans ?? []
@@ -37,6 +42,16 @@ class PlanViewController: UIViewController {
         view.addSubview(tableview)
         configConstraints()
         configTableview()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addPlan)
+        )
+
+    }
+
+    @objc func addPlan() {
+        self.delegate?.showRegisterPlan()
     }
 
     func configTableview() {

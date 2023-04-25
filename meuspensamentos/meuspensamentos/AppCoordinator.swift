@@ -26,13 +26,13 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
-//        let coordinator = PlanCoordinator(navigationController: navigationController)
-//        coordinator.start()
-//        childCoordinator = coordinator
-
-        let coordinator = RegisterPlanCoordinator(navigationController: navigationController)
+        let coordinator = PlanCoordinator(navigationController: navigationController)
         coordinator.start()
         childCoordinator = coordinator
+
+//        let coordinator = RegisterPlanCoordinator(navigationController: navigationController)
+//        coordinator.start()
+//        childCoordinator = coordinator
 
     }
 
