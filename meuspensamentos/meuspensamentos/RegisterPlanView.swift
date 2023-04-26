@@ -105,7 +105,6 @@ final class RegisterPlanView: UIView {
 extension RegisterPlanView: CodeView {
     func buidViewHierarchy() {
         addSubview(mainView)
-        stackview.addArrangedSubview(titleLabel)
         stackview.addArrangedSubview(titleTextFild)
         stackview.addArrangedSubview(subtitleTextFild)
         stackview.addArrangedSubview(dateLabel)
@@ -136,20 +135,20 @@ extension RegisterPlanView: CodeView {
 
 // ---------
 
-    import SwiftUI
-
-    struct PlaygroundView: UIViewRepresentable {
-        func makeUIView(context: Context) -> some UIView {
-            RegisterPlanView()
-        }
-
-        func updateUIView(_ uiView: UIViewType, context: Context) {
-
-        }
-    }
-
-    struct PlaygroundView_Previews: PreviewProvider {
-        static var previews: some View {
-            PlaygroundView()
-        }
-    }
+//    import SwiftUI
+//
+//    struct PlaygroundView: UIViewRepresentable {
+//        func makeUIView(context: Context) -> some UIView {
+//            RegisterPlanView()
+//        }
+//
+//        func updateUIView(_ uiView: UIViewType, context: Context) {
+//
+//        }
+//    }
+//
+//    struct PlaygroundView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            PlaygroundView()
+//        }
+//    }

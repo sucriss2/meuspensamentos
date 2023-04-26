@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let navigationBarApperence = UINavigationBar.appearance()
         navigationBarApperence.tintColor = .magenta
+        navigationBarApperence.preservesSuperviewLayoutMargins = true
+        navigationBarApperence.prefersLargeTitles = true
         return true
     }
 

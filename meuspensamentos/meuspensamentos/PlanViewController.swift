@@ -23,7 +23,7 @@ class PlanViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Planejamento Diário"
         view.textColor = .magenta
-        view.font = UIFont.boldSystemFont(ofSize: 28)
+        view.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         return view
     }()
 
@@ -38,7 +38,6 @@ class PlanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(titleLabel)
         view.addSubview(tableview)
         configConstraints()
         configTableview()
@@ -47,6 +46,8 @@ class PlanViewController: UIViewController {
             target: self,
             action: #selector(addPlan)
         )
+        navigationItem.titleView = titleLabel
+        navigationItem.backButtonTitle = "Voltar"
 
     }
 
@@ -62,10 +63,7 @@ class PlanViewController: UIViewController {
 
     func configConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: tableview.topAnchor, constant: -24),
-
+            tableview.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -100,3 +98,21 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
 }
+
+//    import SwiftUI
+//
+//    struct PlaygroundView: UIViewRepresentable {
+//        func makeUIView(context: Context) -> some UIView {
+//            PlanViewController()
+//
+//            func updateUIView(_ uiView: UIViewType, context: Context) {
+//
+//            }
+//        }
+//
+//        struct PlaygroundView_Previews: PreviewProvider {
+//            static var previews: some View {
+//                PlaygroundView()
+//            }
+//        }
+//    }
