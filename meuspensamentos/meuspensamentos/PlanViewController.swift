@@ -23,7 +23,7 @@ class PlanViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Planejamento Diário"
         view.textColor = .magenta
-        view.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        view.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         return view
     }()
 
@@ -44,14 +44,14 @@ class PlanViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(addPlan)
+            action: #selector(showAddPlan)
         )
         navigationItem.titleView = titleLabel
         navigationItem.backButtonTitle = "Voltar"
 
     }
 
-    @objc func addPlan() {
+    @objc func showAddPlan() {
         self.delegate?.showRegisterPlan()
     }
 

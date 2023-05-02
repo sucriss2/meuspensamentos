@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RegisterPlanView: UIView {
+final class RegisterPlanView: UIView, UITextFieldDelegate {
 
     var mainView: UIView = {
         let view = UIView(frame: .zero)
@@ -128,7 +128,12 @@ extension RegisterPlanView: CodeView {
     }
 
     func setupAdditionConfiguration() {
+        confirmButton.addTarget(self, action: #selector(addPlan), for: .touchUpInside)
+    }
 
+    @objc private func addPlan() {
+        print("=====>> Chegamos AQUI ")
+        confirmButton.backgroundColor = .purple
     }
 
 }
