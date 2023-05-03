@@ -13,6 +13,8 @@
 		8C5F568129F70C5E002B972E /* PlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F568029F70C5D002B972E /* PlanModel.swift */; };
 		8C5F568329F817FF002B972E /* RegisterPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F568229F817FF002B972E /* RegisterPlanViewController.swift */; };
 		8C5F568529F818C7002B972E /* RegisterPlanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F568429F818C7002B972E /* RegisterPlanCoordinator.swift */; };
+		8C6D7AAF2A018F0500B6869E /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7AAE2A018F0500B6869E /* RegisterModel.swift */; };
+		8C6D7AB12A018F6500B6869E /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D7AB02A018F6500B6869E /* Register.swift */; };
 		8CD00B9C29EDBDF400AB0CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00B9B29EDBDF400AB0CDD /* AppDelegate.swift */; };
 		8CD00B9E29EDBDF400AB0CDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00B9D29EDBDF400AB0CDD /* SceneDelegate.swift */; };
 		8CD00BA029EDBDF400AB0CDD /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00B9F29EDBDF400AB0CDD /* PlanViewController.swift */; };
@@ -31,6 +33,8 @@
 		8C5F568029F70C5D002B972E /* PlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanModel.swift; sourceTree = "<group>"; };
 		8C5F568229F817FF002B972E /* RegisterPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlanViewController.swift; sourceTree = "<group>"; };
 		8C5F568429F818C7002B972E /* RegisterPlanCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlanCoordinator.swift; sourceTree = "<group>"; };
+		8C6D7AAE2A018F0500B6869E /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		8C6D7AB02A018F6500B6869E /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		8CD00B9829EDBDF400AB0CDD /* meuspensamentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meuspensamentos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD00B9B29EDBDF400AB0CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CD00B9D29EDBDF400AB0CDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				8C5BA30E29F17929000BB7C4 /* RegisterPlanView.swift */,
 				8C5F568229F817FF002B972E /* RegisterPlanViewController.swift */,
+				8C6D7AAE2A018F0500B6869E /* RegisterModel.swift */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5F567E29F704E9002B972E /* Plan.swift */,
+				8C6D7AB02A018F6500B6869E /* Register.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -241,6 +247,8 @@
 				8CD00BA029EDBDF400AB0CDD /* PlanViewController.swift in Sources */,
 				8C5F567F29F704E9002B972E /* Plan.swift in Sources */,
 				8C5F567D29F6E94E002B972E /* PlanTableViewCell.swift in Sources */,
+				8C6D7AAF2A018F0500B6869E /* RegisterModel.swift in Sources */,
+				8C6D7AB12A018F6500B6869E /* Register.swift in Sources */,
 				8CD00BB529EDC45100AB0CDD /* AppCoordinator.swift in Sources */,
 				8CD00B9C29EDBDF400AB0CDD /* AppDelegate.swift in Sources */,
 				8C5BA30F29F17929000BB7C4 /* RegisterPlanView.swift in Sources */,

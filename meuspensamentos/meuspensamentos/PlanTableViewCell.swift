@@ -21,8 +21,26 @@ class PlanTableViewCell: UITableViewCell {
         return view
     }()
 
+    lazy var labelDateStack: UIStackView = {
+        var stackView = UIStackView(frame: .zero)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.spacing = 16
+        stackView.distribution = .fill
+        stackView.backgroundColor = .clear
+        return stackView
+    }()
+
+    lazy var dateLabel: UILabel = {
+        var date = UILabel(frame: .zero)
+        date.translatesAutoresizingMaskIntoConstraints = false
+        date.text = ""
+        date.font = .boldSystemFont(ofSize: 18)
+        return date
+    }()
+
     lazy var titleLabel: UILabel = {
-        let label = UILabel(frame: .zero)
+        var label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
         label.textColor = .systemPurple
@@ -32,7 +50,7 @@ class PlanTableViewCell: UITableViewCell {
     }()
 
     lazy var textMainLabel: UILabel = {
-        let label = UILabel(frame: .zero)
+        var label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
         label.textColor = .black
@@ -44,8 +62,11 @@ class PlanTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubview(labelDateStack)
         addSubview(cellStackView)
-        cellStackView.addArrangedSubview(titleLabel)
+        labelDateStack.addArrangedSubview(titleLabel)
+        labelDateStack.addArrangedSubview(dateLabel)
+        cellStackView.addArrangedSubview(labelDateStack)
         cellStackView.addArrangedSubview(textMainLabel)
         configConstraints()
 
@@ -58,12 +79,14 @@ class PlanTableViewCell: UITableViewCell {
     public func configure(model: Plan) {
         titleLabel.text = model.title
         textMainLabel.text = model.text
+        dateLabel.text = model.date
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
         titleLabel.text = nil
         textMainLabel.text = nil
+        dateLabel.text = nil
     }
 
     private func configConstraints() {
@@ -77,20 +100,20 @@ class PlanTableViewCell: UITableViewCell {
 
 }
 
-// import SwiftUI
-//
-// struct PlaygroundView: UIViewRepresentable {
-//    func makeUIView(context: Context) -> some UIView {
-//        PlanCellTableViewCell()
-//    }
-//
-//    func updateUIView(_ uiView: UIViewType, context: Context) {
-//
-//    }
-// }
-//
-// struct PlaygroundView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlaygroundView()
-//    }
-// }
+ import SwiftUI
+
+ struct PlaygroundView: UIViewRepresentable {
+    func makeUIView(context: Context) -> some UIView {
+        PlanTableViewCell().contentView
+    }
+
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+
+    }
+ }
+
+ struct PlaygroundView_Previews: PreviewProvider {
+    static var previews: some View {
+        PlaygroundView()
+    }
+ }

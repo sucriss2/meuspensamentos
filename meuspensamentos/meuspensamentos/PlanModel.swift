@@ -14,3 +14,8 @@ class PlanModel {
     }
 
 }
+
+// receber os dados da RegisterModel e enviar pra Plancontroller
+// salvar dado no firebase
+// recuperar dados e fazer notification
+// formatacao da data

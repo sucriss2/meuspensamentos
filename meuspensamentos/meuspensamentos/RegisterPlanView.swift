@@ -9,14 +9,14 @@ import UIKit
 
 final class RegisterPlanView: UIView, UITextFieldDelegate {
 
-    var mainView: UIView = {
+    private var mainView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
 
-    var stackview: UIStackView = {
+    private var stackview: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
@@ -27,7 +27,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         return view
     }()
 
-    var titleLabel: UILabel = {
+    private var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Cadastro"
@@ -37,7 +37,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
     }()
 
     var titleTextFild: UITextField = {
-        let view = UITextField(frame: .zero)
+        var view = UITextField(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray5
         view.placeholder = "Titulo"
@@ -48,7 +48,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
     }()
 
     var subtitleTextFild: UITextField = {
-        let view = UITextField(frame: .zero)
+        var view = UITextField(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray5
         view.placeholder = "Observação"
@@ -60,7 +60,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         return view
     }()
 
-    var dateLabel: UILabel = {
+    private var dateLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Data do Plano"
@@ -90,6 +90,26 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         button.layer.cornerRadius = 8
         return button
     }()
+
+    var titleText: String {
+        get {
+            return titleTextFild.text ?? ""
+        }
+
+        set {
+            titleTextFild.text = newValue
+        }
+    }
+
+    var subText: String {
+        get {
+            return subtitleTextFild.text ?? ""
+        }
+
+        set {
+            return subtitleTextFild.text = newValue
+        }
+    }
 
     init() {
         super.init(frame: .zero)
@@ -132,7 +152,7 @@ extension RegisterPlanView: CodeView {
     }
 
     @objc private func addPlan() {
-        print("=====>> Chegamos AQUI ")
+        print("=====>> Chegamos AQUI ") // adicionar e salvar as informacoes na tela da PlanView e no userDefault
         confirmButton.backgroundColor = .purple
     }
 

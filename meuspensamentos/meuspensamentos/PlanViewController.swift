@@ -99,20 +99,3 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
 
 }
 
-//    import SwiftUI
-//
-//    struct PlaygroundView: UIViewRepresentable {
-//        func makeUIView(context: Context) -> some UIView {
-//            PlanViewController()
-//
-//            func updateUIView(_ uiView: UIViewType, context: Context) {
-//
-//            }
-//        }
-//
-//        struct PlaygroundView_Previews: PreviewProvider {
-//            static var previews: some View {
-//                PlaygroundView()
-//            }
-//        }
-//    }
