@@ -10,6 +10,13 @@ class PlanTableViewCell: UITableViewCell {
 
     static let identifier = "PlanCell"
 
+    lazy var mainView: UIView = {
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+
     lazy var cellStackView: UIStackView = {
         let view = UIStackView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -62,12 +69,12 @@ class PlanTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(labelDateStack)
-        addSubview(cellStackView)
+        addSubview(mainView)
         labelDateStack.addArrangedSubview(titleLabel)
         labelDateStack.addArrangedSubview(dateLabel)
         cellStackView.addArrangedSubview(labelDateStack)
         cellStackView.addArrangedSubview(textMainLabel)
+        mainView.addSubview(cellStackView)
         configConstraints()
 
     }
@@ -91,29 +98,34 @@ class PlanTableViewCell: UITableViewCell {
 
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            cellStackView.topAnchor.constraint(equalTo: self.topAnchor),
-            cellStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            cellStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            cellStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            mainView.topAnchor.constraint(equalTo: self.topAnchor),
+            mainView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+
+            cellStackView.topAnchor.constraint(equalTo: mainView.topAnchor),
+            cellStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
+            cellStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
+            cellStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
         ])
     }
 
 }
 
- import SwiftUI
-
- struct PlaygroundView: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        PlanTableViewCell().contentView
-    }
-
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-
-    }
- }
-
- struct PlaygroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaygroundView()
-    }
- }
+// import SwiftUI
+//
+// struct PlaygroundView: UIViewRepresentable {
+//    func makeUIView(context: Context) -> some UIView {
+//        PlanTableViewCell()
+//    }
+//
+//    func updateUIView(_ uiView: UIViewType, context: Context) {
+//
+//    }
+// }
+//
+// struct PlaygroundView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlaygroundView()
+//    }
+// }

@@ -36,7 +36,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         return label
     }()
 
-    var titleTextFild: UITextField = {
+   private var titleTextFild: UITextField = {
         var view = UITextField(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray5
@@ -47,7 +47,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         return view
     }()
 
-    var subtitleTextFild: UITextField = {
+    private var subtitleTextFild: UITextField = {
         var view = UITextField(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGray5
@@ -68,7 +68,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         return label
     }()
 
-    var datepickerPlan: UIDatePicker = {
+    var datePlan: UIDatePicker = {
         let view = UIDatePicker(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.datePickerMode = .dateAndTime
@@ -77,6 +77,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         view.date = .now
         view.tintColor = .systemPink
         view.locale = Locale(identifier: "pt_BR")
+        view.minimumDate = Date()
         return view
     }()
 
@@ -111,6 +112,14 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         }
     }
 
+    var dateString: String {
+        let dtString = "12-12-23"
+        let dtFormatter = DateFormatter()
+        dtFormatter.dateFormat = "dd-MM-yy"
+        dtFormatter.date(from: dtString)
+        return datePlan.date.formatted()
+    }
+
     init() {
         super.init(frame: .zero)
         setupView()
@@ -128,7 +137,7 @@ extension RegisterPlanView: CodeView {
         stackview.addArrangedSubview(titleTextFild)
         stackview.addArrangedSubview(subtitleTextFild)
         stackview.addArrangedSubview(dateLabel)
-        stackview.addArrangedSubview(datepickerPlan)
+        stackview.addArrangedSubview(datePlan)
         stackview.addArrangedSubview(confirmButton)
         mainView.addSubview(stackview)
     }
@@ -148,13 +157,13 @@ extension RegisterPlanView: CodeView {
     }
 
     func setupAdditionConfiguration() {
-        confirmButton.addTarget(self, action: #selector(addPlan), for: .touchUpInside)
+    // confirmButton.addTarget(self, action: #selector(addPlan), for: .touchUpInside)
     }
 
-    @objc private func addPlan() {
-        print("=====>> Chegamos AQUI ") // adicionar e salvar as informacoes na tela da PlanView e no userDefault
-        confirmButton.backgroundColor = .purple
-    }
+//    @objc private func addPlan() {
+//        print("=====>> Chegamos AQUI ") // adicionar e salvar as informacoes na tela da PlanView e no userDefault
+//        confirmButton.backgroundColor = .purple
+//    }
 
 }
 

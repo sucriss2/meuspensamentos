@@ -98,4 +98,3 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
 }
-

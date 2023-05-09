@@ -9,7 +9,7 @@ import UIKit
 
 class PlanCoordinator: Coordinator {
     var navigationController: UINavigationController!
-    private var childCoordinator: RegisterPlanCoordinator?
+    private var childCoordinator: RegisterPlanCoordinator!
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

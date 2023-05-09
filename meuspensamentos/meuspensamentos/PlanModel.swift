@@ -8,9 +8,10 @@
 import UIKit
 
 class PlanModel {
-    var plans: [Plan] = [.fixture(), .fixture(), .fixture()]
+    var plans: [Plan]
 
     init() {
+        plans = []
     }
 
 }

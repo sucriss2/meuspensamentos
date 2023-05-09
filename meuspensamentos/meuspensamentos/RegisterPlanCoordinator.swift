@@ -7,6 +7,10 @@
 
 import UIKit
 
+// protocol RegisterPlanCoordinatorDelegate: AnyObject {
+//    func showPlan()
+// }
+
 class RegisterPlanCoordinator: Coordinator {
     var navigationController: UINavigationController!
 
@@ -21,7 +25,20 @@ class RegisterPlanCoordinator: Coordinator {
 
     func makeViewController() -> RegisterPlanViewController {
         let viewC = RegisterPlanViewController()
+        let screen = RegisterPlanView()
+        let model = RegisterModel()
+
+//        viewC.delegate = self
+        viewC.model = model
+        viewC.screen = screen
         return viewC
     }
 
 }
+
+//extension RegisterPlanCoordinator: RegisterPlanViewControllerDelegate {
+//    func addPlanRegister() {
+//        
+//    }
+//
+//}
