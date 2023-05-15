@@ -7,14 +7,9 @@
 
 import UIKit
 
-// protocol RegisterPlanViewControllerDelegate: AnyObject {
-//    func addPlanRegister()
-// }
-
 class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
 
     var screen: RegisterPlanView?
-//    weak var delegate: RegisterPlanViewControllerDelegate?
     var model: RegisterModel?
 
     override func viewDidLoad() {
@@ -31,7 +26,6 @@ class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc private func addPlan() {
-        print("=====>> Chegamos AQUI ") // adicionar e salvar as informacoes na tela da PlanView e no userDefault
 
         guard let screen = screen else {
             return
@@ -39,13 +33,16 @@ class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
 
         let plan = Plan(title: screen.titleText, text: screen.subText, date: screen.dateString)
         screen.confirmButton.backgroundColor = .purple
-        // clearScreen()
+         clearScreen()
         print("\(plan)")
+
+        model?.savePlan(plan: plan)
+
     }
 
     func registerPlan() {
         screen?.confirmButton.addTarget(self, action: #selector(addPlan), for: .touchUpInside)
-        model?.savePlan()
+
     }
 
 }

@@ -11,6 +11,7 @@ struct Plan: Codable {
     var title: String
     var text: String
     var date: String
+
 }
 
 extension Plan {

@@ -160,11 +160,6 @@ extension RegisterPlanView: CodeView {
     // confirmButton.addTarget(self, action: #selector(addPlan), for: .touchUpInside)
     }
 
-//    @objc private func addPlan() {
-//        print("=====>> Chegamos AQUI ") // adicionar e salvar as informacoes na tela da PlanView e no userDefault
-//        confirmButton.backgroundColor = .purple
-//    }
-
 }
 
 // ---------

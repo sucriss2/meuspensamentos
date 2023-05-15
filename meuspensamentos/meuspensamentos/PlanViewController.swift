@@ -48,7 +48,7 @@ class PlanViewController: UIViewController {
         )
         navigationItem.titleView = titleLabel
         navigationItem.backButtonTitle = "Voltar"
-
+        model?.load()
     }
 
     @objc func showAddPlan() {

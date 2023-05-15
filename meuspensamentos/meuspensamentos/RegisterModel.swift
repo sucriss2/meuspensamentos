@@ -9,24 +9,24 @@ import UIKit
 
 class RegisterModel {
     var plan: Plan?
+    var service: PlanManager?
 
-    init() { 
+    init() {
     }
 
-    func savePlan() {
-        guard let fileURL = Bundle.main.url(forResource: "plans", withExtension: "json") else {
-            return
-        }
-
-        let encoder = JSONEncoder()
-
-        self.plan = Plan(title: plan?.title ?? "", text: plan?.text ?? "", date: plan?.date ?? "")
+    func savePlan(plan: Plan) { // transformar o json em dados e enviar pra salvar no arquivo bundle( json => dados)
+        let jsonEncoder = JSONEncoder()
         do {
-            let jsonData = try encoder.encode(plan)
-            let string = String(data: jsonData, encoding: .utf8)
+            let jsonData = try jsonEncoder.encode(plan)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            Swift.print("JSON String : " + jsonString!)
         } catch {
             print(error.localizedDescription)
         }
+
+        self.service?.loadJson(plan: plan)
+        print("Salvo este plano a baixo.... ")
+
     }
 
 }

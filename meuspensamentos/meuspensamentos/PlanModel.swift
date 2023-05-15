@@ -9,14 +9,23 @@ import UIKit
 
 class PlanModel {
     var plans: [Plan]
+    var service: PlanManager?
 
     init() {
         plans = []
     }
 
-}
+    func load() {
+        print("====== AQUIIII ========")
+//        service?.loadList(
+//                   onComplete: { [weak self] cars in
+//                       guard let self = self else { return }
+//                       self.cars.append(contentsOf: cars)
+//                       self.delegate?.didLoadSucess()
+//                   },
+//                   onError: { error in
+//                       self.delegate?.didError(message: "\(error.localizedDescription)")
+//                   })
+    }
 
-// receber os dados da RegisterModel e enviar pra Plancontroller
-// salvar dado no firebase
-// recuperar dados e fazer notification
-// formatacao da data
+}
