@@ -24,7 +24,7 @@ class RegisterModel {
             print(error.localizedDescription)
         }
 
-        self.service?.loadJson(plan: plan)
+//        self.service?.loadJson(plan: plan)
         print("Salvo este plano a baixo.... ")
 
     }

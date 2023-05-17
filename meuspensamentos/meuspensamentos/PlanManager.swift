@@ -9,89 +9,30 @@ import Foundation
 
 class PlanManager {
 
-    let plan: Plan?
+    var plans: [Plan] = []
+    private let manager = FileManager.default
 
-    init() {
-        self.plan = Plan(title: "", text: "", date: "")
+    private var filePath: URL {
+        let URLDirectories = manager.urls(for: .documentationDirectory, in: .userDomainMask)
+        return URLDirectories[0].appending(component: "plans.json")
     }
 
-    func loadJson(plan: Plan) {
-        let decoder = JSONDecoder()
-        guard
-            let url = Bundle.main.url(forResource: "plans", withExtension: "json"),
-            let data = try? Data(contentsOf: url)
-        else { return }
-        do {
-            let plan = try? decoder.decode(Plan.self, from: data)
-        }
-
-        print(plan.title)
+    init(plans: [Plan]) {
+        self.plans = plans
     }
 
     func savePlans() {
-        
+        do {
+            let encoder = JSONEncoder()
+            let plansData = try encoder.encode(plans)
+            if manager.createFile(atPath: filePath.path, contents: plansData, attributes: nil) {
+                print("Falha ao salvar do Plano de Estudo")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
+    
 
 }
-
-//        guard let fileURL = Bundle.main.url(forResource: "plans", withExtension: "json") else { return }
-//        do {
-//            let jsonData = try Data(contentsOf: fileURL)
-//            let jsonDecoder = JSONDecoder()
-//            do {
-//                plan = try jsonDecoder.decode(Plan.self, from: jsonData)
-//            }
-//        } catch {
-//            error.localizedDescription
-//        }
-
-//    }
-
-//    func loadPlans(
-//        onComplete: @escaping (Plan) -> Void,
-//        onError: @escaping (Error) -> Void
-//    ) {
-//        guard let fileURL = Bundle.main.url(forResource: "plans", withExtension: "json") else { return }
-//        do {
-//            let jsonData = try Data(contentsOf: fileURL)
-//            let jsonDecoder = JSONDecoder()
-//            do {
-//                self.plan = try jsonDecoder.decode(Plan.self, from: jsonData)
-//            }
-//        } catch {
-//            onError(error)
-//        }
-//
-//    }
-//
-//    func savePlan() {
-//        if let data = try? JSONEncoder().encode(plans) {
-//            Bundle.main.
-//        }
-//    }
-
-// struct Person : Codable {
-//    let name: String
-//    let lastName: String
-//    let age: Int
-// }
-//
-// func loadJson(fileName: String) -> Person? {
-//   let decoder = JSONDecoder()
-//   guard
-//        let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
-//        let data = try? Data(contentsOf: url),
-//        let person = try? decoder.decode(Person.self, from: data)
-//   else {
-//        return nil
-//   }
-//
-//   return person
-// }
-
-// MARK: ENCODER
-
-// if let data = try? JSONEncoder().encode(plan) {
-//    let objectString = String(data: data, encoding: .utf8)
-// }

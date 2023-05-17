@@ -24,7 +24,7 @@
 		8CD00BB729EDC47900AB0CDD /* PlanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */; };
 		8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */; };
 		8CF08FF72A0BD41900F414A5 /* PlanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF08FF62A0BD41900F414A5 /* PlanManager.swift */; };
-		8CF08FF82A0BD56F00F414A5 /* plans.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C6D7AB72A053D9400B6869E /* plans.json */; };
+		8CFEC43D2A15663900A527C7 /* Plans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEC43C2A15663900A527C7 /* Plans.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,6 @@
 		8C5F568229F817FF002B972E /* RegisterPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlanViewController.swift; sourceTree = "<group>"; };
 		8C5F568429F818C7002B972E /* RegisterPlanCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlanCoordinator.swift; sourceTree = "<group>"; };
 		8C6D7AAE2A018F0500B6869E /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
-		8C6D7AB72A053D9400B6869E /* plans.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = plans.json; sourceTree = "<group>"; };
 		8CD00B9829EDBDF400AB0CDD /* meuspensamentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meuspensamentos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD00B9B29EDBDF400AB0CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CD00B9D29EDBDF400AB0CDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCoordinator.swift; sourceTree = "<group>"; };
 		8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
 		8CF08FF62A0BD41900F414A5 /* PlanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanManager.swift; sourceTree = "<group>"; };
+		8CFEC43C2A15663900A527C7 /* Plans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plans.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5F567E29F704E9002B972E /* Plan.swift */,
-				8CF08FF62A0BD41900F414A5 /* PlanManager.swift */,
+				8CFEC43C2A15663900A527C7 /* Plans.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -137,18 +137,34 @@
 		8CD00B9A29EDBDF400AB0CDD /* meuspensamentos */ = {
 			isa = PBXGroup;
 			children = (
+				8CFEC43F2A156C9C00A527C7 /* Network */,
 				8CD00B9B29EDBDF400AB0CDD /* AppDelegate.swift */,
 				8CD00B9D29EDBDF400AB0CDD /* SceneDelegate.swift */,
 				8C5F568B29F9AC12002B972E /* Protocol */,
 				8C5F568929F9ABD3002B972E /* Coordinator */,
+				8CFEC43E2A15667E00A527C7 /* Service */,
 				8C5F568A29F9AC00002B972E /* Model */,
 				8C5F568629F9AB8E002B972E /* Screens */,
 				8CD00BA429EDBDF800AB0CDD /* Assets.xcassets */,
 				8CD00BA629EDBDF800AB0CDD /* LaunchScreen.storyboard */,
 				8CD00BA929EDBDF800AB0CDD /* Info.plist */,
-				8C6D7AB72A053D9400B6869E /* plans.json */,
 			);
 			path = meuspensamentos;
+			sourceTree = "<group>";
+		};
+		8CFEC43E2A15667E00A527C7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8CF08FF62A0BD41900F414A5 /* PlanManager.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		8CFEC43F2A156C9C00A527C7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +226,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF08FF82A0BD56F00F414A5 /* plans.json in Resources */,
 				8CD00BA829EDBDF800AB0CDD /* LaunchScreen.storyboard in Resources */,
 				8CD00BA529EDBDF800AB0CDD /* Assets.xcassets in Resources */,
 			);
@@ -247,6 +262,7 @@
 				8CF08FF72A0BD41900F414A5 /* PlanManager.swift in Sources */,
 				8C5F568529F818C7002B972E /* RegisterPlanCoordinator.swift in Sources */,
 				8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */,
+				8CFEC43D2A15663900A527C7 /* Plans.swift in Sources */,
 				8CD00BB729EDC47900AB0CDD /* PlanCoordinator.swift in Sources */,
 				8C5F568329F817FF002B972E /* RegisterPlanViewController.swift in Sources */,
 				8CD00BA029EDBDF400AB0CDD /* PlanViewController.swift in Sources */,
