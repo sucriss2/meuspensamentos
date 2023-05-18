@@ -7,7 +7,7 @@
 import UIKit
 
 protocol PlanViewControllerDelegate: AnyObject {
-    func showRegisterPlan()
+    func showRegisterPlan(plan: [Plan])
 }
 
 class PlanViewController: UIViewController {
@@ -52,7 +52,7 @@ class PlanViewController: UIViewController {
     }
 
     @objc func showAddPlan() {
-        self.delegate?.showRegisterPlan()
+        self.delegate?.showRegisterPlan(plan: self.plans)
     }
 
     func configTableview() {

@@ -19,14 +19,15 @@ class RegisterModel {
         do {
             let jsonData = try jsonEncoder.encode(plan)
             let jsonString = String(data: jsonData, encoding: .utf8)
-            Swift.print("JSON String : " + jsonString!)
+//            Swift.print("JSON String : " + jsonString!)
         } catch {
             print(error.localizedDescription)
         }
 
-//        self.service?.loadJson(plan: plan)
-        print("Salvo este plano a baixo.... ")
+        self.service?.savePlans(plan: plan)
 
     }
 
 }
+
+// model vai capturar as informacao do plan que vem da view e salvar no arquivo que esta no endereco do service.filepath

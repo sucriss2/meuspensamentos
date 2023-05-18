@@ -9,9 +9,11 @@ import UIKit
 
 class RegisterPlanCoordinator: Coordinator {
     var navigationController: UINavigationController!
+    private var plan: [Plan]
 
-    init(navigationController: UINavigationController) {
+    init(plan: [Plan], navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.plan = plan
     }
 
     func start() {
@@ -23,11 +25,11 @@ class RegisterPlanCoordinator: Coordinator {
         let viewC = RegisterPlanViewController()
         let screen = RegisterPlanView()
         let model = RegisterModel()
-//        let service = PlanManager()
+        let service = PlanManager()
 
         viewC.model = model
         viewC.screen = screen
-//        model.service = service
+        model.service = service
         return viewC
     }
 

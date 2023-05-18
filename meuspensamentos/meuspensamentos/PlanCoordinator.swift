@@ -35,8 +35,8 @@ class PlanCoordinator: Coordinator {
 }
 
 extension PlanCoordinator: PlanViewControllerDelegate {
-    func showRegisterPlan() {
-        let rpCoordinator = RegisterPlanCoordinator(navigationController: navigationController)
+    func showRegisterPlan(plan: [Plan]) {
+        let rpCoordinator = RegisterPlanCoordinator(plan: plan, navigationController: navigationController)
         rpCoordinator.start()
         childCoordinator = rpCoordinator
     }

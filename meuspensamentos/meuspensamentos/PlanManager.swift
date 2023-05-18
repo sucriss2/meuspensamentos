@@ -10,29 +10,43 @@ import Foundation
 class PlanManager {
 
     var plans: [Plan] = []
+
     private let manager = FileManager.default
 
     private var filePath: URL {
-        let URLDirectories = manager.urls(for: .documentationDirectory, in: .userDomainMask)
-        return URLDirectories[0].appending(component: "plans.json")
+        let urlDirectories = manager.urls(for: .documentDirectory, in: .userDomainMask)
+        return urlDirectories[0].appendingPathComponent("meusplanos.json")
     }
 
-    init(plans: [Plan]) {
-        self.plans = plans
+//    init(plans: [Plan]) {
+//        self.plans = plans
+//    }
+
+    init() {
+        loadPlans()
     }
 
-    func savePlans() {
+    func savePlans(plan: Plan) {
         do {
+            plans.append(plan)
             let encoder = JSONEncoder()
             let plansData = try encoder.encode(plans)
-            if manager.createFile(atPath: filePath.path, contents: plansData, attributes: nil) {
-                print("Falha ao salvar do Plano de Estudo")
-            }
+            try plansData.write(to: filePath)
+            print(filePath)
         } catch {
             print(error.localizedDescription)
         }
     }
 
-    
+    func loadPlans() {
+        if manager.fileExists(atPath: filePath.path) {
+            if let data = try? Data(contentsOf: filePath) {
+                if let plans = try? JSONDecoder().decode([Plan].self, from: data) {
+                    self.plans = plans
+                }
+            }
+        }
+
+    }
 
 }
