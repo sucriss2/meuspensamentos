@@ -13,7 +13,7 @@ protocol PlanModelDelegate: AnyObject {
 }
 
 class PlanModel {
-    var plans: [Plan]
+    private(set) var plans: [Plan]
     var service: PlanManager?
     weak var delegate: PlanModelDelegate?
 
@@ -22,26 +22,18 @@ class PlanModel {
     }
 
     func load() {
-        guard let service = service else { return }
-        if service.plans.isEmpty {
-            self.delegate?.didError(message: "Lista vazia")
-        } else {
-            service.loadPlans()
-            self.plans = service.plans
-            self.delegate?.didLoadSucess()
-        }
+        service?.loadPlans(
+            onComplete: { [weak self] plans in
+                guard let self = self else { return }
+                self.plans = plans
+                self.delegate?.didLoadSucess()
+            },
+            onError: { error in
+                self.delegate?.didError(message: "\(error.localizedDescription)")
+            }
+        )
 
-        print("====== AQUIIII ========")
-
-//        service?.loadList(
-//                   onComplete: { [weak self] plans in
-//                       guard let self = self else { return }
-//                       self.plans.append(contentsOf: plans)
-//                       self.delegate?.didLoadSucess()
-//                   },
-//                   onError: { error in
-//                       self.delegate?.didError(message: "\(error.localizedDescription)")
-//                   })
     }
 
 }
+
