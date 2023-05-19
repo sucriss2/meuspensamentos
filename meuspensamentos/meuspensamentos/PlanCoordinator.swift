@@ -23,11 +23,12 @@ class PlanCoordinator: Coordinator {
     func makeViewController() -> PlanViewController {
         let viewController = PlanViewController()
         let model = PlanModel()
-//        let service = PlanManager()
+        let service = PlanManager()
 
         viewController.model = model
         viewController.delegate = self
-//        model.service = service
+        model.service = service
+        model.delegate = viewController
 
         return viewController
     }

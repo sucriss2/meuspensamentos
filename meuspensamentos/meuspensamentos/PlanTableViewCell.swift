@@ -86,7 +86,7 @@ class PlanTableViewCell: UITableViewCell {
     public func configure(model: Plan) {
         titleLabel.text = model.title
         textMainLabel.text = model.text
-       // dateLabel.text = model.date
+        dateLabel.text = model.date
     }
 
     override func prepareForReuse() {

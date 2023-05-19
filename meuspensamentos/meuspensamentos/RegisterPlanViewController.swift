@@ -17,6 +17,7 @@ class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
         view = screen
         title = "Cadastro"
         registerPlan()
+        clearScreen()
     }
 
     func clearScreen() {
@@ -33,8 +34,6 @@ class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
 
         let plan = Plan(title: screen.titleText, text: screen.subText, date: screen.dateString)
         screen.confirmButton.backgroundColor = .purple
-         clearScreen()
-        print("\(plan)")
 
         model?.savePlan(plan: plan)
 

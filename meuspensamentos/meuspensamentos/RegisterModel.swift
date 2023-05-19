@@ -14,18 +14,15 @@ class RegisterModel {
     init() {
     }
 
+    func preparePlan(model: Plan) {
+        plan?.title = model.title
+        plan?.text = model.text
+        plan?.date = model.date
+
+    }
+
     func savePlan(plan: Plan) { // transformar o json em dados e enviar pra salvar no arquivo bundle( json => dados)
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(plan)
-            let jsonString = String(data: jsonData, encoding: .utf8)
-//            Swift.print("JSON String : " + jsonString!)
-        } catch {
-            print(error.localizedDescription)
-        }
-
         self.service?.savePlans(plan: plan)
-
     }
 
 }

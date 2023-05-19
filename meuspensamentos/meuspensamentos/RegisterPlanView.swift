@@ -88,9 +88,16 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         button.titleLabel?.font = .boldSystemFont(ofSize: 24.0)
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Confirmar Plano", for: .normal)
+//        button.isEnabled = false
         button.layer.cornerRadius = 8
         return button
     }()
+
+    var isButtonEnabled: Bool = false {
+        didSet {
+            confirmButton.isEnabled = isButtonEnabled
+        }
+    }
 
     var titleText: String {
         get {

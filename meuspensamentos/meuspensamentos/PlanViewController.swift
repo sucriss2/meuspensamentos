@@ -48,6 +48,11 @@ class PlanViewController: UIViewController {
         )
         navigationItem.titleView = titleLabel
         navigationItem.backButtonTitle = "Voltar"
+//        model?.load()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         model?.load()
     }
 
@@ -95,6 +100,21 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+
+}
+
+extension PlanViewController: PlanModelDelegate {
+    func didLoadSucess() {
+        DispatchQueue.main.async {
+            self.tableview.reloadData()
+        }
+    }
+
+    func didError(message: String) {
+        DispatchQueue.main.async {
+            print(message)
+        }
     }
 
 }
