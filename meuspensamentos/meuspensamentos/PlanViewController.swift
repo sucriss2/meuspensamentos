@@ -48,7 +48,6 @@ class PlanViewController: UIViewController {
         )
         navigationItem.titleView = titleLabel
         navigationItem.backButtonTitle = "Voltar"
-//        model?.load()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -100,6 +99,22 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath
+    ) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            model?.deletePlan(index: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
     }
 
 }

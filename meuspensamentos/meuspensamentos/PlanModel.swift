@@ -35,5 +35,7 @@ class PlanModel {
 
     }
 
+    func deletePlan(index: Int) {
+        plans.remove(at: index)
+    }
 }
-
