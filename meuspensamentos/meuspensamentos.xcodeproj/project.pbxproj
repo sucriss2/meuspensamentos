@@ -24,8 +24,6 @@
 		8CD00BB729EDC47900AB0CDD /* PlanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */; };
 		8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */; };
 		8CF08FF72A0BD41900F414A5 /* PlanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF08FF62A0BD41900F414A5 /* PlanManager.swift */; };
-		8CFEC43D2A15663900A527C7 /* Plans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEC43C2A15663900A527C7 /* Plans.swift */; };
-		8CFEC4412A167CE700A527C7 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFEC4402A167CE700A527C7 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +46,6 @@
 		8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCoordinator.swift; sourceTree = "<group>"; };
 		8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
 		8CF08FF62A0BD41900F414A5 /* PlanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanManager.swift; sourceTree = "<group>"; };
-		8CFEC43C2A15663900A527C7 /* Plans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plans.swift; sourceTree = "<group>"; };
-		8CFEC4402A167CE700A527C7 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				8C5F567E29F704E9002B972E /* Plan.swift */,
-				8CFEC43C2A15663900A527C7 /* Plans.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -141,7 +136,6 @@
 			children = (
 				8CD00B9B29EDBDF400AB0CDD /* AppDelegate.swift */,
 				8CD00B9D29EDBDF400AB0CDD /* SceneDelegate.swift */,
-				8CFEC4422A167DC400A527C7 /* Extension */,
 				8C5F568B29F9AC12002B972E /* Protocol */,
 				8C5F568929F9ABD3002B972E /* Coordinator */,
 				8CFEC43E2A15667E00A527C7 /* Service */,
@@ -160,14 +154,6 @@
 				8CF08FF62A0BD41900F414A5 /* PlanManager.swift */,
 			);
 			name = Service;
-			sourceTree = "<group>";
-		};
-		8CFEC4422A167DC400A527C7 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				8CFEC4402A167CE700A527C7 /* FileManager.swift */,
-			);
-			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,12 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CFEC4412A167CE700A527C7 /* FileManager.swift in Sources */,
 				8CD00BB329EDC43500AB0CDD /* Coordinator.swift in Sources */,
 				8CF08FF72A0BD41900F414A5 /* PlanManager.swift in Sources */,
 				8C5F568529F818C7002B972E /* RegisterPlanCoordinator.swift in Sources */,
 				8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */,
-				8CFEC43D2A15663900A527C7 /* Plans.swift in Sources */,
 				8CD00BB729EDC47900AB0CDD /* PlanCoordinator.swift in Sources */,
 				8C5F568329F817FF002B972E /* RegisterPlanViewController.swift in Sources */,
 				8CD00BA029EDBDF400AB0CDD /* PlanViewController.swift in Sources */,
