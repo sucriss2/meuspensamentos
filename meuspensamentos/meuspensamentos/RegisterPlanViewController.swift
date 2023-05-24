@@ -17,31 +17,35 @@ class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
         view = screen
         title = "Cadastro"
         registerPlan()
-
     }
 
     func clearScreen() {
-        screen?.confirmButton.backgroundColor = .magenta
-        screen?.titleText = ""
-        screen?.subText = ""
-    }
-
-    @objc private func addPlan() {
-
         guard let screen = screen else {
             return
         }
+        screen.confirmButton.backgroundColor = .magenta
+        screen.titleText = ""
+        screen.subText = ""
+        screen.isButtonEnabled = false
 
-        let plan = Plan(title: screen.titleText, text: screen.subText, date: screen.dateString)
-        screen.confirmButton.backgroundColor = .purple
+    }
+
+    @objc private func addPlan() {
+        guard let screen = screen else {
+            return
+        }
+        if screen.titleText.isEmpty == false {
+            let plan = Plan(title: screen.titleText, text: screen.subText, date: screen.dateString)
+            model?.savePlan(plan)
+        }
         clearScreen()
-        model?.savePlan(plan)
+        screen.confirmButton.backgroundColor = .purple
+
 
     }
 
     func registerPlan() {
         screen?.confirmButton.addTarget(self, action: #selector(addPlan), for: .touchUpInside)
-
     }
 
 }

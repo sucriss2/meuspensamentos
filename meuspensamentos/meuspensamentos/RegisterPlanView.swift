@@ -68,7 +68,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         return label
     }()
 
-    var datePlan: UIDatePicker = {
+    private var datePlan: UIDatePicker = {
         let view = UIDatePicker(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.datePickerMode = .dateAndTime
@@ -88,7 +88,6 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         button.titleLabel?.font = .boldSystemFont(ofSize: 24.0)
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Confirmar Plano", for: .normal)
-//        button.isEnabled = false
         button.layer.cornerRadius = 8
         return button
     }()
