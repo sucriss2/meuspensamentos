@@ -21,11 +21,10 @@ class PlanTableViewCell: UITableViewCell {
         let view = UIStackView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isLayoutMarginsRelativeArrangement = true
-        view.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         view.axis = .vertical
+        view.spacing = 4
         view.distribution = .fill
         view.backgroundColor = .clear
-        view.spacing = 8
         return view
     }()
 
@@ -36,15 +35,9 @@ class PlanTableViewCell: UITableViewCell {
         stackView.spacing = 8
         stackView.distribution = .fill
         stackView.backgroundColor = .clear
-        return stackView
-    }()
+        stackView.backgroundColor = UIColor(red: 1.0, green: 0.843, blue: 0.886, alpha: 1)
 
-    lazy var dateLabel: UILabel = {
-        var date = UILabel(frame: .zero)
-        date.translatesAutoresizingMaskIntoConstraints = false
-        date.text = ""
-        date.font = .boldSystemFont(ofSize: 18)
-        return date
+        return stackView
     }()
 
     lazy var titleLabel: UILabel = {
@@ -52,9 +45,16 @@ class PlanTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
         label.textColor = .systemPurple
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.backgroundColor = .clear
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         return label
+    }()
+
+    lazy var dateLabel: UILabel = {
+        var date = UILabel(frame: .zero)
+        date.translatesAutoresizingMaskIntoConstraints = false
+        date.text = ""
+        date.font = .boldSystemFont(ofSize: 16)
+        return date
     }()
 
     lazy var textMainLabel: UILabel = {
@@ -62,9 +62,10 @@ class PlanTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
         label.textColor = .black
-        label.numberOfLines = 3
-        label.font = .systemFont(ofSize: 16, weight: .regular)
-        label.backgroundColor = .systemGray6
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        label.font = .systemFont(ofSize: 18, weight: .regular)
+        label.backgroundColor = UIColor(red: 0.950, green: 0.843, blue: 0.886, alpha: 1)
         return label
     }()
 
@@ -104,10 +105,10 @@ class PlanTableViewCell: UITableViewCell {
             mainView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 
-            cellStackView.topAnchor.constraint(equalTo: mainView.topAnchor),
-            cellStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor),
-            cellStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
-            cellStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
+            cellStackView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 8),
+            cellStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 16),
+            cellStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -16),
+            cellStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -8)
         ])
 
     }

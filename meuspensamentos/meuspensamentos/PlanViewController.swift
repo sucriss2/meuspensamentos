@@ -93,12 +93,16 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let plan = plans[indexPath.row]
         cell.configure(model: plan)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.gray
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.magenta
+        cell.selectedBackgroundView = bgColorView
         cell.backgroundColor = .clear
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 100
     }
 
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath
@@ -115,6 +119,10 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.endUpdates()
         }
     }
+
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 
 }
 
