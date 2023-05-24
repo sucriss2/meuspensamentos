@@ -21,8 +21,9 @@ class RegisterModel {
 
     }
 
-    func savePlan(plan: Plan) { // transformar o json em dados e enviar pra salvar no arquivo bundle( json => dados)
-        self.service?.savePlans(plan: plan)
+    func savePlan(_ plan: Plan) { // transformar o json em dados e enviar pra salvar no arquivo bundle( json => dados)
+        self.service?.savePlansAfterLoad(plan: plan)
+
     }
 
 }

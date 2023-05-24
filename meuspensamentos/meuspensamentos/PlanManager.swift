@@ -42,15 +42,12 @@ class PlanManager {
 
     }
 
-    func savePlans(plan: Plan) {
+    func savePlansAfterLoad(plan: Plan) {
         loadPlans { [self] plans in
             do {
                 var plans = plans
                 plans.append(plan)
-                let encoder = JSONEncoder()
-                let plansData = try encoder.encode(plans)
-                try plansData.write(to: filePath)
-                print(filePath)
+                try saveArrayPlans(plans: plans)
             } catch {
                 print(error.localizedDescription)
             }
@@ -60,8 +57,11 @@ class PlanManager {
 
     }
 
-    func updatePlans() {
-        
+    func saveArrayPlans(plans: [Plan]) throws {
+        let encoder = JSONEncoder()
+        let plansData = try encoder.encode(plans)
+        try plansData.write(to: filePath)
+
     }
 
 }

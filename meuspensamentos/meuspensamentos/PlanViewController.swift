@@ -111,7 +111,6 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             tableView.beginUpdates()
             model?.deletePlan(index: indexPath.row)
-            
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }

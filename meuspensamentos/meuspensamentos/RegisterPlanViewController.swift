@@ -35,7 +35,7 @@ class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
         let plan = Plan(title: screen.titleText, text: screen.subText, date: screen.dateString)
         screen.confirmButton.backgroundColor = .purple
         clearScreen()
-        model?.savePlan(plan: plan)
+        model?.savePlan(plan)
 
     }
 

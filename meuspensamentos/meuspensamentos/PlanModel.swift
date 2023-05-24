@@ -37,6 +37,15 @@ class PlanModel {
 
     func deletePlan(index: Int) {
         plans.remove(at: index)
-        
+        savePlans()
     }
+
+    private func savePlans() {
+        do {
+            try service?.saveArrayPlans(plans: plans)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
 }

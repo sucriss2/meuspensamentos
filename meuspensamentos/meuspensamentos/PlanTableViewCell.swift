@@ -25,6 +25,7 @@ class PlanTableViewCell: UITableViewCell {
         view.axis = .vertical
         view.distribution = .fill
         view.backgroundColor = .clear
+        view.spacing = 8
         return view
     }()
 
@@ -32,7 +33,7 @@ class PlanTableViewCell: UITableViewCell {
         var stackView = UIStackView(frame: .zero)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.spacing = 16
+        stackView.spacing = 8
         stackView.distribution = .fill
         stackView.backgroundColor = .clear
         return stackView
@@ -108,10 +109,11 @@ class PlanTableViewCell: UITableViewCell {
             cellStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor),
             cellStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor)
         ])
+
     }
 
 }
-
+//
 // import SwiftUI
 //
 // struct PlaygroundView: UIViewRepresentable {
