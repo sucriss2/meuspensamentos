@@ -96,6 +96,7 @@ class PlanTableViewCell: UITableViewCell {
         titleLabel.text = nil
         textMainLabel.text = nil
         dateLabel.text = nil
+
     }
 
     private func configConstraints() {

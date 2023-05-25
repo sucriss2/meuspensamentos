@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
 
@@ -34,13 +35,25 @@ class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
         guard let screen = screen else {
             return
         }
+        let id = String(screen.datePlan.date.timeIntervalSince1970)
+
         if screen.titleText.isEmpty == false {
-            let plan = Plan(title: screen.titleText, text: screen.subText, date: screen.dateString)
+            let plan = Plan(title: screen.titleText, text: screen.subText, date: screen.dateString, id: id, done: false)
             model?.savePlan(plan)
         }
+
+        let content = UNMutableNotificationContent()
+        content.title = "Lembrete"
+        content.subtitle = "Assunto \(screen.titleText)"
+        content.body = "Estudar \(screen.subText)"
+//            content.sound = UNNotificationSound(named: "arquivodesom.caf") // somente se o arquivo estiver no projeto.
+        content.categoryIdentifier = "Lembrete"
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
         clearScreen()
         screen.confirmButton.backgroundColor = .purple
-
 
     }
 

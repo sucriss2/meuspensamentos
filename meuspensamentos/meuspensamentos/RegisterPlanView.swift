@@ -68,10 +68,11 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         return label
     }()
 
-    private var datePlan: UIDatePicker = {
+     var datePlan: UIDatePicker = {
         let view = UIDatePicker(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.datePickerMode = .dateAndTime
+        view.minimumDate = Date()
         view.preferredDatePickerStyle = .wheels
         view.minuteInterval = 5
         view.date = .now
