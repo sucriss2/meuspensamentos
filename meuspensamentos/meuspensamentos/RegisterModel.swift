@@ -14,13 +14,6 @@ class RegisterModel {
     init() {
     }
 
-    func preparePlan(model: Plan) {
-        plan?.title = model.title
-        plan?.text = model.text
-        plan?.date = model.date
-
-    }
-
     func savePlan(_ plan: Plan) { // transformar o json em dados e enviar pra salvar no arquivo bundle( json => dados)
         self.service?.savePlansAfterLoad(plan: plan)
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 protocol PlanModelDelegate: AnyObject {
     func didLoadSucess()
@@ -35,7 +36,17 @@ class PlanModel {
 
     }
 
+    func setPlanDone(id: String) {
+        if var plan = plans.first(where: {$0.id == id}) {
+            plan.done = true
+            plans.append(plan)
+            savePlans()
+        }
+    }
+
     func deletePlan(index: Int) {
+        UNUserNotificationCenter.current()
+            .removePendingNotificationRequests(withIdentifiers: [plans[index].id])  // remover notificação
         plans.remove(at: index)
         savePlans()
     }

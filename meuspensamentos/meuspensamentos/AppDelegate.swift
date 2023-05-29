@@ -74,6 +74,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
         switch response.actionIdentifier {
         case "Confirm":
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Confirmed"), object: nil, userInfo: ["id": id])
             print("Usuário confirmou que o plano foi realizado")
         case "Cancel":
             print("Usuário cancelou")

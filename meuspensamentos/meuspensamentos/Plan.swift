@@ -11,10 +11,10 @@ struct Plan: Codable {
     var title: String
     var text: String
     var date: String
-    var id: String?
-    var done: Bool?
+    var id: String
+    var done: Bool
 
-    init(title: String, text: String, date: String, id: String?, done: Bool?) {
+    init(title: String, text: String, date: String, id: String, done: Bool) {
         self.title = title
         self.text = text
         self.date = date

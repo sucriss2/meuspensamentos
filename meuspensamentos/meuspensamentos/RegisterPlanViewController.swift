@@ -48,8 +48,8 @@ class RegisterPlanViewController: UIViewController, UITextFieldDelegate {
         content.body = "Estudar \(screen.subText)"
 //        content.sound = UNNotificationSound(named: "arquivodesom.caf") // somente se o arquivo estiver no projeto.
         content.categoryIdentifier = "Lembrete"
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
 
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
         let dateComponent = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute],
             from: screen.datePlan.date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)

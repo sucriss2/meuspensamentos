@@ -74,7 +74,7 @@ final class RegisterPlanView: UIView, UITextFieldDelegate {
         view.datePickerMode = .dateAndTime
         view.minimumDate = Date()
         view.preferredDatePickerStyle = .wheels
-        view.minuteInterval = 5
+        view.minuteInterval = 1
         view.date = .now
         view.tintColor = .systemPink
         view.locale = Locale(identifier: "pt_BR")
