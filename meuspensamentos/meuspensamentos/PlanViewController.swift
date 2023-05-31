@@ -48,6 +48,12 @@ class PlanViewController: UIViewController {
         )
         navigationItem.titleView = titleLabel
         navigationItem.backButtonTitle = "Voltar"
+
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        model?.load()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(onReceive(notification:)),
@@ -55,15 +61,10 @@ class PlanViewController: UIViewController {
 
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        model?.load()
-
-    }
-
     @objc func onReceive(notification: Notification) {
         if let userInfo = notification.userInfo, let id = userInfo["id"] as? String {
             model?.setPlanDone(id: id)
+            tableview.reloadData()
         }
     }
 
@@ -107,10 +108,7 @@ extension PlanViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(model: plan)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
 
-        if plan.done == true {
-            cell.backgroundColor = .green
-        }
-        cell.backgroundColor = .clear
+        cell.backgroundColor = plan.done ? .green : .clear
 
         return cell
     }

@@ -37,9 +37,8 @@ class PlanModel {
     }
 
     func setPlanDone(id: String) {
-        if var plan = plans.first(where: {$0.id == id}) {
-            plan.done = true
-            plans.append(plan)
+        if let index = findPlanIndexById(id) {
+            plans[index].done = true
             savePlans()
         }
     }
@@ -49,6 +48,13 @@ class PlanModel {
             .removePendingNotificationRequests(withIdentifiers: [plans[index].id])  // remover notificação
         plans.remove(at: index)
         savePlans()
+    }
+
+    private func findPlanIndexById(_ id: String) -> Int? {  // not if inside for.
+        for (index, plan) in plans.enumerated() where plan.id == id {
+            return index
+        }
+        return nil
     }
 
     private func savePlans() {
