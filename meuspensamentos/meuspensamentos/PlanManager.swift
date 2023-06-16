@@ -9,7 +9,6 @@ import Foundation
 
 class PlanManager {
 
-    let network: Network?
     private let manager = FileManager.default
 
     private var filePath: URL {
@@ -17,8 +16,7 @@ class PlanManager {
         return urlDirectories[0].appendingPathComponent("meusplanos.json")
     }
 
-    init(network: Network = Network.shared) {
-        self.network = network
+    init() {
     }
 
     func loadPlans(
@@ -44,36 +42,12 @@ class PlanManager {
 
     }
 
-    func fetchPlans(
-        onComplete: @escaping ([Plan]) -> Void,
-        onError: @escaping (Error) -> Void
-    ) {
-
-        let request = Request.init(
-            baseURL: Config.baseURL,
-            method: .get
-        )
-
-        network?.request(request: request, returning: [Plan].self,
-                         onComplete: { result in
-            switch result {
-            case .failure(let error):
-                onError(error)
-            case .success(let plans):
-                onComplete(plans ?? [])
-            }
-        })
-
-    }
-
     func savePlansAfterLoad(plan: Plan) {
-        fetchPlans { [self] plans in
+        loadPlans { [self] plans in
             do {
                 var plans = plans
                 plans.append(plan)
-                try savePlansArray(plans: plans, onComplete: { plans in
-
-                }, onError: <#T##(Error) -> Void#>)
+                try saveArrayPlans(plans: plans)
             } catch {
                 print(error.localizedDescription)
             }
@@ -87,30 +61,7 @@ class PlanManager {
         let encoder = JSONEncoder()
         let plansData = try encoder.encode(plans)
         try plansData.write(to: filePath)
-    }
 
-    func savePlansArray(plans: [Plan], onComplete: @escaping ([Plan]) -> Void, onError: @escaping (Error) -> Void) {
-        do {
-            let encoder = JSONEncoder()
-            let plansData = try encoder.encode(plans)
-
-            let request = Request(baseURL: Config.baseURL, method: .post, body: plansData)
-
-            network?.request(request: request, returning: [Plan].self, onComplete: { result in
-                switch result {
-                case .failure(let error):
-                    onError(error)
-                case .success(let plans):
-                    guard let plans = plans else {
-                        return
-                    }
-                    onComplete(plans)
-                }
-            })
-
-        } catch {
-            onError(error)
-        }
     }
 
 }

@@ -23,7 +23,7 @@ class PlanModel {
     }
 
     func load() {
-        service?.fetchPlans(
+        service?.loadPlans(
             onComplete: { [weak self] plans in
                 guard let self = self else { return }
                 self.plans = plans

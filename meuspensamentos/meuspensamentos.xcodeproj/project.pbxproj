@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C0AE9CC2A2F762C009E2464 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0AE9CB2A2F762C009E2464 /* Config.swift */; };
-		8C0AE9CE2A2F7698009E2464 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0AE9CD2A2F7698009E2464 /* Request.swift */; };
 		8C5BA30F29F17929000BB7C4 /* RegisterPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BA30E29F17929000BB7C4 /* RegisterPlanView.swift */; };
 		8C5F567D29F6E94E002B972E /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F567C29F6E94D002B972E /* PlanTableViewCell.swift */; };
 		8C5F567F29F704E9002B972E /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F567E29F704E9002B972E /* Plan.swift */; };
@@ -25,13 +23,10 @@
 		8CD00BB529EDC45100AB0CDD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB429EDC45000AB0CDD /* AppCoordinator.swift */; };
 		8CD00BB729EDC47900AB0CDD /* PlanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */; };
 		8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */; };
-		8CE5B9D32A2E6E2200DCAC13 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE5B9D22A2E6E2200DCAC13 /* Network.swift */; };
 		8CF08FF72A0BD41900F414A5 /* PlanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF08FF62A0BD41900F414A5 /* PlanManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C0AE9CB2A2F762C009E2464 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		8C0AE9CD2A2F7698009E2464 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		8C5BA30E29F17929000BB7C4 /* RegisterPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPlanView.swift; sourceTree = "<group>"; };
 		8C5F567C29F6E94D002B972E /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
 		8C5F567E29F704E9002B972E /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
@@ -50,7 +45,6 @@
 		8CD00BB429EDC45000AB0CDD /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8CD00BB629EDC47900AB0CDD /* PlanCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanCoordinator.swift; sourceTree = "<group>"; };
 		8CD00BBA29EDC8F400AB0CDD /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
-		8CE5B9D22A2E6E2200DCAC13 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		8CF08FF62A0BD41900F414A5 /* PlanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,9 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				8CF08FF62A0BD41900F414A5 /* PlanManager.swift */,
-				8CE5B9D22A2E6E2200DCAC13 /* Network.swift */,
-				8C0AE9CB2A2F762C009E2464 /* Config.swift */,
-				8C0AE9CD2A2F7698009E2464 /* Request.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -258,12 +249,9 @@
 			files = (
 				8CD00BB329EDC43500AB0CDD /* Coordinator.swift in Sources */,
 				8CF08FF72A0BD41900F414A5 /* PlanManager.swift in Sources */,
-				8CE5B9D32A2E6E2200DCAC13 /* Network.swift in Sources */,
 				8C5F568529F818C7002B972E /* RegisterPlanCoordinator.swift in Sources */,
-				8C0AE9CC2A2F762C009E2464 /* Config.swift in Sources */,
 				8CD00BBB29EDC8F400AB0CDD /* CodeViewProtocol.swift in Sources */,
 				8CD00BB729EDC47900AB0CDD /* PlanCoordinator.swift in Sources */,
-				8C0AE9CE2A2F7698009E2464 /* Request.swift in Sources */,
 				8C5F568329F817FF002B972E /* RegisterPlanViewController.swift in Sources */,
 				8CD00BA029EDBDF400AB0CDD /* PlanViewController.swift in Sources */,
 				8C5F567F29F704E9002B972E /* Plan.swift in Sources */,
